@@ -1,0 +1,4 @@
+
+
+export const CHANGE_BASEINFO="CHANGE_BASEINFO";//基础规则
+export const CHANGE_OTHERINFO="CHANGE_OTHERINFO";//其他规则
