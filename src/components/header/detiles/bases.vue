@@ -16,8 +16,7 @@
       <div class="span">副标题</div><div class="input"><el-input v-model="baseFrom.twoTitle" placeholder="请输入内容" style="width: 230px;height: 40px; " maxlength="11"><i slot="suffix">{{`${baseFrom.twoTitle.length*3}/33`}}</i></el-input><span style="color: #B3C0D1;padding-left: 5px">选填</span></div>
     </div>
     <div class="btn">
-      <el-button type="primary" @click="goNext">下一步</el-button>
-      <el-button >返回</el-button>
+      <el-button type="primary" @click="goNext" size="mini">下一步</el-button>
     </div>
   </div>
 </template>

@@ -1,44 +1,45 @@
 <template>
-  <div class="complete">
-    <div class="p">
-      <span>卷类型</span><p>{{this.baseInfo.radio}}</p>
-    </div>
-    <div class="p">
-      <span>标题</span><p>{{this.baseInfo.title}}</p>
-    </div>
-    <div class="p">
-      <span>副标题</span><p>{{this.baseInfo.twoTitle}}</p>
-    </div>
-    <div class="p">
-      <span>卷面价值</span><p>{{this.baseInfo.sale}}</p>
-    </div>
-    <div class="p">
-      <div style="float:left;">卡卷颜色</div><div class="color" :style="{'background-color':getColor}"></div>
-    </div>
-    <div class="p">
-      <span>可用时间</span>
-      <div>
-        <p v-if="this.otherInfo.radio=='1'">{{this.otherInfo.today | dateFtt}}至{{this.otherInfo.otherDay | dateFtt}}</p>
-        <p v-else>{{this.otherInfo.value6[0] | dateFtt}}至{{this.otherInfo.value6[1] | dateFtt}}</p>
-        <p style="padding: 15px 0 0 90px">有效时间内，任意时间可用</p>
+  <div>
+    <div class="complete">
+      <div class="p">
+        <span>卷类型</span><p>{{this.baseInfo.radio}}</p>
       </div>
-    </div>
-    <div class="p">
-      <span>卷生效时间</span><p>卷在领取后立即生效，用户须在可用时间内使用</p>
-    </div>
-    <div class="p">
-      <span>使用门店</span><p>{{this.otherInfo.shopName}}</p>
-    </div>
-    <div class="p">
-      <span>核销方式</span><p>{{this.otherInfo.tools}}</p>
-    </div>
-    <div class="p">
-      <span>使用限制</span><p>{{this.otherInfo.checkList[0]}}{{this.otherInfo.downSale?`,${this.otherInfo.checkList[1]}${this.otherInfo.downSale}元`:''}}</p>
-    </div>
-    <div class="p f-cb">
-      <span>使用须知</span><p v-for="(item,index) in this.otherInfo.useRuleMore" :key="index" style="padding-left: 90px">{{item}}</p>
-    </div>
-    <div class="weChat">
+      <div class="p">
+        <span>标题</span><p>{{this.baseInfo.title}}</p>
+      </div>
+      <div class="p">
+        <span>副标题</span><p>{{this.baseInfo.twoTitle}}</p>
+      </div>
+      <div class="p">
+        <span>卷面价值</span><p>{{this.baseInfo.sale}}</p>
+      </div>
+      <div class="p">
+        <div style="float:left;">卡卷颜色</div><div class="color" :style="{'background-color':getColor}"></div>
+      </div>
+      <div class="p">
+        <span>可用时间</span>
+        <div>
+          <p v-if="this.otherInfo.radio=='1'">{{this.otherInfo.today | dateFtt}}至{{this.otherInfo.otherDay | dateFtt}}</p>
+          <p v-else>{{this.otherInfo.value6[0] | dateFtt}}至{{this.otherInfo.value6[1] | dateFtt}}</p>
+          <p style="padding: 15px 0 0 90px">有效时间内，任意时间可用</p>
+        </div>
+      </div>
+      <div class="p">
+        <span>卷生效时间</span><p>卷在领取后立即生效，用户须在可用时间内使用</p>
+      </div>
+      <div class="p">
+        <span>使用门店</span><p>{{this.otherInfo.shopName}}</p>
+      </div>
+      <div class="p">
+        <span>核销方式</span><p>{{this.otherInfo.tools}}</p>
+      </div>
+      <div class="p">
+        <span>使用限制</span><p>{{this.otherInfo.checkList[0]}}{{this.otherInfo.downSale?`,${this.otherInfo.checkList[1]}${this.otherInfo.downSale}元`:''}}</p>
+      </div>
+      <div class="p f-cb">
+        <span>使用须知</span><p v-for="(item,index) in this.otherInfo.useRuleMore" :key="index" style="padding-left: 90px">{{item}}</p>
+      </div>
+      <div class="weChat" :style="{'background-color':getColor}">
         <div class="card">
           <div class="img">
             <img src="../../../assets/logo.png" alt="">
@@ -59,6 +60,7 @@
         <div class="last">
           <p>已添加至卡包，<a href="*">点击查看</a></p>
         </div>
+      </div>
     </div>
     <div class="btn">
       <el-button type="primary" @click="goNext" size="mini">完成创建</el-button>
@@ -202,7 +204,8 @@
   color: #ffffff;
 }
   .btn{
-    padding-top: 60px;
-    text-align: center;
+    position: absolute;
+    bottom: 30px;
+    left: 347.8px;
   }
 </style>
