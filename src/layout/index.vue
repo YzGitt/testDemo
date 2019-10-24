@@ -26,6 +26,9 @@
 </script>
 
 <style scoped>
+   /deep/ .el-menu{
+    border-right: none
+  }
   .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;
