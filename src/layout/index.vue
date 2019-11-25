@@ -1,13 +1,17 @@
 <template>
   <el-container style="border: 1px solid #eee" class="el-container">
     <el-aside width="200px">
-      <el-menu :default-openeds="['1', '3']" style="padding-top:60px;background-color:#D3DCE6; ">
+      <el-menu style="padding-top:60px;background-color:#D3DCE6; ">
         <el-submenu index="1">
           <template slot="title"><i></i>管理</template>
           <el-menu-item-group style="background-color:#D3DCE6;">
             <el-menu-item index="1-1">卷包管理</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
+          <el-menu-item index="2" @click="excel">
+              <i class="el-icon-menu"></i>
+              <span slot="title">导出列表</span>
+            </el-menu-item>
       </el-menu>
     </el-aside>
     <el-container>
@@ -21,11 +25,19 @@
 
 <script>
     export default {
-        name: "index"
+        name: "index",
+        methods:{
+          excel(){
+            this.$router.push('/excel/export')
+          }
+        }
     }
 </script>
 
 <style scoped>
+  /deep/ .el-menu{
+    border: none
+  }
   .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;

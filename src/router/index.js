@@ -37,5 +37,18 @@ export default new Router({
 
       ]
     },
+    {
+      path:'/excel',
+      name:'导出列表',
+      component:layout,
+      redirect:'/excel/export',
+      children:[
+        {
+          path: 'export',
+          name:'export',
+          component: ()=>import('@/views/expro-excel'),
+        }
+      ]
+    }
   ]
 })
