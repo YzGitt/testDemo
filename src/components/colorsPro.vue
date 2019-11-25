@@ -7,7 +7,7 @@
         <i class="el-icon-arrow-down"></i>
       </div>
       <el-dropdown-menu slot="dropdown" style="width: 165px;height: 40px;">
-          <div class="box1 "  v-for="item in colors " :style="{'background-color':item}" @click="setColor(item)" ></div>
+          <div class="box1 "  v-for="(item,index) in colors " :style="{'background-color':item}" @click="setColor(item)" :key="index"></div>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
